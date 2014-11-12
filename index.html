@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>New School Map</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.qtip.min.css"></link>
 <style type="text/css">
 body {
   width: 100%;
@@ -48,18 +49,17 @@ body {
   position: absolute;
 
 }
-
-
 </style>
 <script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.qtip.min.js"></script>
 </head>
 <body>
   <div id="imageWrapper">
     <img id="bgimage" src="img/floor-plan.jpg" width="750" height="580"></img>
-    <a class="emoji" href="http://www.google.com" target="_blank" id="soccer">
+    <a class="emoji" href="http://narwhalnation.com/athletics/soccer/" target="_blank" id="soccer" title="New School Soccer">
       <img src="img/soccer.jpg" width=50 height=50 />
     </a>
-    <a class="emoji" href="http://www.google.com" target="_blank" id="nametune">
+    <a class="emoji" href="http://en.wikipedia.org/wiki/Name_That_Tune" target="_blank" id="nametune" title="Name That Tune!">
       <img src="img/nametune.jpg" width=50 height=50 />
     </a>
   </div>
@@ -72,6 +72,8 @@ body {
       $('#cursorPosition').text(e.pageX + ', ' + e.pageY);
 
     });
+
+    $('.emoji').qtip(); // Tooltips -- see http://qtip2.com/guides
 
   });
 </script>
