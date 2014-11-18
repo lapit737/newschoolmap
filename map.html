@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<title>New School Map</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.qtip.min.css"></link>
+<style type="text/css">
+body {
+  width: 100%;
+  height: 100%;
+
+}
+#imageWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750px;
+  height: 580px;
+  background-image: url("img/unicenterphoto.png"); 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#imageWrapper:hover {
+ background-image: url("img/building.png");
+
+}
+#imageWrapper:hover .emoji {
+	display: block;
+}
+#bgimage {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.emoji {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  opacity: 0.9;
+}
+.emoji:hover {
+  opacity: 1;
+
+}
+#nametune {
+  top: 320px;
+  left: 250px;
+
+}
+#sports {
+  top: 500px;
+  left: 150px;
+
+}
+#sushi {
+	top: 330px;
+	left: 90px;
+}
+#laundry {
+	top:100px;
+	left:146px;
+}
+#studyspace {
+	top:300;
+	left:260px;
+}
+#stairs {
+	top:400px;
+	left:270px;
+}
+#money {
+	top:340px;
+	left:65;
+}
+#gavel {
+	top:400px;
+	left:300;
+}
+#narwhal {
+	top:400px;
+	left:600;
+}
+
+#cursorPosition {
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 24px;
+  font-family: Helvetica, Arial,sans-serif;
+  font-weight: bold;
+  position: absolute;
+
+}
+
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.qtip.min.js"></script>
+</head>
+<body>
+  <div id="imageWrapper">
+   <!-- <img id="bgimage" src="img/outline.png" width="750" height="580"></img>-->
+    <a class="emoji" href="http://narwhalnation.com/athletics/soccer/" target="_blank" id="sports" title="New School Sports">
+      <img src="img/sports.jpg" width=50 height=50 />
+    </a>
+    <a class="emoji" href="http://en.wikipedia.org/wiki/Name_That_Tune" target="_blank" id="nametune" title="Name That Tune!">
+      <img src="img/nametune.jpg" width=50 height=50 />
+    </a>
+      <a class="emoji" href="http://en.wikipedia.org/wiki/Sushi_Pack" target="_blank" id="sushi" title="Sushi">
+      <img src="img/sushireal.png" width=50 height=50 />
+    </a>
+    <a class="emoji" href="http://www.yelp.com/c/nyc/drycleaninglaundry" target="_blank" id="laundry" title="Laundry">
+      <img src="img/laundry.png" width=50 height=50 />
+      </a>
+          <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="studyspace" title="Study Space">
+      <img src="img/studyspace.png" width=50 height=50 />
+      </a>
+         <a class="emoji" href="http://archpaper.com/news/articles.asp?id=6246#.VGo5D1fF8Vk" target="_blank" id="stairs" title="Stairs">
+      <img src="img/stairs.png" width=80 height=80 />
+      </a>
+          <a class="emoji" href="http://www.dineoncampus.com/newschooldining/idx.cfm?" target="_blank" id="money" title="Cost">
+      <img src="img/money.png" width=50 height=50 />
+      </a>
+       <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="gavel" title="Gavel">
+      <img src="img/gavel.png" width=50 height=50 />
+      </a>
+       <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="narwhal" title="Narwhal">
+      <img src="img/narwhal.png" width=50 height=50 />
+      </a>
+  </div>
+  <div id="cursorPosition"> 
+  </div>
+
+<script>
+  $(document).ready(function(){
+    $('body').on('mousemove', function(e){
+      $('#cursorPosition').text(e.pageX + ', ' + e.pageY);
+
+    });
+
+    $('.emoji').qtip(); // Tooltips -- see http://qtip2.com/guides
+
+  });
+</script>
+</body>
+
+</html>
+
